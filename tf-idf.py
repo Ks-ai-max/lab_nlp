@@ -42,4 +42,24 @@ for token in most_freq:
         if token in nltk.word_tokenize(document):
             doc_containing_word += 1
     word_idf_values[token] = np.log(len(corpus)/(1 + doc_containing_word))
-    
+    word_tf_values = {}
+for token in most_freq:
+    sent_tf_vector = []
+    for document in corpus:
+        doc_freq = 0
+        for word in nltk.word_tokenize(document):
+            if token == word:
+                  doc_freq += 1
+        word_tf = doc_freq/len(nltk.word_tokenize(document))
+        sent_tf_vector.append(word_tf)
+    word_tf_values[token] = sent_tf_vector
+tfidf_values = []
+for token in word_tf_values.keys():
+    tfidf_sentences = []
+    for tf_sentence in word_tf_values[token]:
+        tf_idf_score = tf_sentence * word_idf_values[token]
+        tfidf_sentences.append(tf_idf_score)
+    tfidf_values.append(tfidf_sentences)
+tf_idf_model = np.asarray(tfidf_values)
+tf_idf_model = np.transpose(tf_idf_model)
+
