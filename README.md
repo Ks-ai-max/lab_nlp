@@ -1,5 +1,5 @@
 # **Natural Language Processing Lab Work**
-## Welcome to the repository for my Natural Language Processing lab work. This repository contains the code related to various exercises in the field of NLP. I'm just starting out in this field and doing my best, so please don't judge too harshly :)
+## Welcome to the repository for my Natural Language Processing lab work. This repository contains the code related to various exercises in the field of NLP. I'm just starting out in this field and trying to do my best, so please don't judge too harshly :)
 # Contributing
 ## If you would like to contribute, please follow these steps:
 ### 1. Fork the repository.
